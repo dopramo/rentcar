@@ -242,7 +242,7 @@ ul {
 }
 
 .navbar-logo .logo-img {
-  height: 44px;
+  height: 250px;
   width: auto;
   object-fit: contain;
 }
@@ -1253,14 +1253,12 @@ section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-brand h3 {
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 700;
+.footer-brand .footer-logo-img {
+  height: 300px;
+  width: auto;
+  object-fit: contain;
   margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: block;
 }
 
 .footer-brand p {

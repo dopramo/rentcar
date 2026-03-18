@@ -239,13 +239,12 @@ ul {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.45rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.3px;
+}
+
+.navbar-logo .logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar-logo .logo-icon {

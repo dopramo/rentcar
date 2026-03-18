@@ -141,23 +141,17 @@ bookingForm.addEventListener('submit', (e) => {
   const pickup = formData.get('pickup');
   const message = formData.get('message');
 
-  // Build WhatsApp message
-  const waMessage = `Hello CeylonFleet! I'd like to request a quote.\n\n` +
-    `*Name:* ${name}\n` +
-    `*Phone:* ${phone}\n` +
-    `*Email:* ${email}\n` +
-    `*Vehicle:* ${vehicle}\n` +
-    `*Rental Period:* ${rentalPeriod}\n` +
-    `*Pickup Location:* ${pickup}\n` +
-    `*Message:* ${message || 'N/A'}`;
+  // Build email subject and body
+  const subject = `Car Rental Quote Request from ${name}`;
+  const body = `Hello CeylonFleet,\n\nI'd like to request a quote.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nVehicle Type: ${vehicle}\nRental Period: ${rentalPeriod}\nPickup Location: ${pickup}\nMessage: ${message || 'N/A'}\n\nThank you.`;
 
-  const waUrl = `https://wa.me/94769610377?text=${encodeURIComponent(waMessage)}`;
-  window.open(waUrl, '_blank');
+  const mailtoUrl = `mailto:ceylonfleetinfo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoUrl;
 
   // Show success feedback
   const btn = bookingForm.querySelector('.btn-submit');
   const originalText = btn.innerHTML;
-  btn.innerHTML = '✅ Sent! Opening WhatsApp...';
+  btn.innerHTML = '✅ Opening your email client...';
   btn.style.background = '#06d6a0';
   btn.style.color = '#fff';
 
